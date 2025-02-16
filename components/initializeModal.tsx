@@ -1,4 +1,4 @@
-import { createLutForCandyMachineAndGuard } from "../utils/createLutForCandyGuard";
+import { createLutForCandyMachineAndGuard } from "@/utils/createLutForCandyGuard";
 import {
   Box,
   Button,
@@ -117,8 +117,8 @@ const initializeGuards =
             candyGuard: candyMachine.mintAuthority,
             group: some(group.label),
             routeArgs: {
-              candyGuardAuthority: umi.identity,
               id: group.guards.allocation.value.id,
+              candyGuardAuthority: umi.identity,
             },
           })
         );
