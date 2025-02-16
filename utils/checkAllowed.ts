@@ -301,9 +301,8 @@ export const guardChecker = async (
 
     if (singleGuard.solPayment.__option === "Some") {
       const solPayment = singleGuard.solPayment as Some<SolPayment>;
-      let payableAmount = 0;
       if (solPayment.value.lamports.basisPoints >= BigInt(0)) {
-        payableAmount = Number(solBalance.basisPoints) / Number(solPayment.value.lamports.basisPoints);
+        let payableAmount = Number(solBalance.basisPoints) / Number(solPayment.value.lamports.basisPoints);
         mintableAmount = calculateMintable(mintableAmount, Number(payableAmount));
       }
 
