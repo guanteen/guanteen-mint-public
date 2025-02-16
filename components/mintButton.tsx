@@ -3,7 +3,8 @@ import {
   CandyMachine,
   mintV2,
 } from "@metaplex-foundation/mpl-candy-machine";
-import { GuardReturn } from "../utils/checkerHelper";
+
+import { GuardReturn } from "@/utils/checkerHelper";
 import {
   AddressLookupTableInput,
   KeypairSigner,
@@ -580,9 +581,9 @@ export function ButtonList({
         </Flex>
       </HStack>
       <SimpleGrid columns={2} spacing={5}>
-        <Text pt="2" fontSize="sm">
-          {buttonGuard.mintText}
-        </Text>
+        <Text pt="2" fontSize="sm"
+              dangerouslySetInnerHTML={{ __html: buttonGuard.mintText }}
+        />
         <VStack>
           {process.env.NEXT_PUBLIC_MULTIMINT === "true" && buttonGuard.allowed ? (
             <NumberInput
