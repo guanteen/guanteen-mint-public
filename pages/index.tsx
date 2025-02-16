@@ -75,7 +75,7 @@ const useCandyMachine = (
           toast({
             id: "no-cm-found",
             title: "The CM from .env is invalid",
-            description: "Are you using the correct environment?",
+            description: "Are you using the correct environment? "+candyMachineId,
             status: "error",
             duration: 999999,
             isClosable: true,
