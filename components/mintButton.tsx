@@ -57,7 +57,7 @@ import {
   GuardButtonList,
   buildTx,
   getRequiredCU,
-} from "../utils/mintHelper";
+} from "@/utils/mintHelper";
 import { useSolanaTime } from "@/utils/SolanaTimeContext";
 import { verifyTx } from "@/utils/verifyTx";
 import { base58 } from "@metaplex-foundation/umi/serializers";
@@ -584,7 +584,7 @@ export function ButtonList({
           {buttonGuard.mintText}
         </Text>
         <VStack>
-          {process.env.NEXT_PUBLIC_MULTIMINT && buttonGuard.allowed ? (
+          {process.env.NEXT_PUBLIC_MULTIMINT === "true" && buttonGuard.allowed ? (
             <NumberInput
               value={numberInputValues[buttonGuard.label] || 1}
               min={1}
